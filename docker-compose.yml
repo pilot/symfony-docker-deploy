@@ -1,0 +1,15 @@
+# mysql:
+#   image: mysql
+#   environment:
+#     MYSQL_ROOT_PASSWORD: sfcampua
+
+web:
+  build: .
+  # links:
+  #   - mysql
+  ports:
+    - 80:80
+  # expose:
+  #   - 80
+  volumes:
+    - .:/var/app
