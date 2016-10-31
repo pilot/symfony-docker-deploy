@@ -1,15 +1,14 @@
-# mysql:
-#   image: mysql
-#   environment:
-#     MYSQL_ROOT_PASSWORD: sfcampua
+mysql:
+  image: mysql
+  environment:
+    MYSQL_ROOT_PASSWORD: sfcampua
 
 web:
   build: .
-  # links:
-  #   - mysql
+  container_name: symfony_app
+  links:
+    - mysql
   ports:
     - 80:80
-  # expose:
-  #   - 80
   volumes:
     - .:/var/app
